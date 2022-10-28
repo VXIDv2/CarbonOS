@@ -1,0 +1,4 @@
+var num1 = input;
+var num2 = input;
+var total = eval num1+num2;
+print total;
