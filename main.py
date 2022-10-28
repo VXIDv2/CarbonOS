@@ -2,6 +2,8 @@
 import os
 from math import *
 import lang
+import requests
+import bs4
 
 helpMenu = {
     "python": "python <FILE>",
