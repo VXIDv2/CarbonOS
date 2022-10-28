@@ -44,7 +44,7 @@ def console():
             elif "color " in cmd:
                 _color = cmd.replace("color ", "")
                 color(_color)
-            elif "hello world" in cmd:
+            elif "hello world" == cmd:
                 print("Hello World!")
             elif "edit " in cmd:
                 file = cmd.replace("edit ", "")
