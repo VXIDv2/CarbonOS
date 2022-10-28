@@ -195,6 +195,10 @@ Is Now Booting Up...
                             Sulfur Tech.
                             2022
     """)
+    for i in range(100):
+        print("#", end="")
+
+    print("\n")
 
 boot()
 console()
