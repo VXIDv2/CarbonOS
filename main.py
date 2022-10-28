@@ -1,10 +1,7 @@
 # Import Packages
 import os
 from math import *
-from colorama import Fore, init, Style
 import lang
-
-init()
 
 helpMenu = {
     "python": "python <FILE>",
@@ -31,14 +28,14 @@ def console():
                 if file.endswith(".py"):
                     python(file)
                 else:
-                    print(f"{Fore.RED}FileTypeError: {file}{Style.RESET_ALL}")
+                    print(f"FileTypeError: {file}")
             elif "carbon " in cmd:
                 file = cmd.replace("carbon ", "")
                 if file.endswith(".car"):
                     lang.run(file)
                     print("")
                 else:
-                    print(f"{Fore.RED}FileTypeError: {file}{Style.RESET_ALL}")
+                    print(f"FileTypeError: {file}")
             elif "help" in cmd:
                 help()
             elif "color " in cmd:
@@ -75,14 +72,13 @@ def console():
                 new_file = input("What Is The Name Of This File? ")
                 clone_file(file, new_file)
             else:
-                print(f"{Fore.RED} SYNTAX ERROR: Could Not Find The Command {cmd}.")
-                print(Style.RESET_ALL, end = "")
+                print(f"SyntaxError: Could Not Find The Command {cmd}.")
         except SyntaxError:
-            print(f"{Fore.RED}SyntaxError: {cmd}{Style.RESET_ALL}")
+            print(f"SyntaxError: {cmd}")
         except NameError:
-            print(f"{Fore.RED}NameError: {cmd}{Style.RESET_ALL}")
+            print(f"NameError: {cmd}")
         except FileNotFoundError:
-            print(f"{Fore.RED}FileNotFoundError: {cmd}{Style.RESET_ALL}")
+            print(f"FileNotFoundError: {cmd}")
             
 # Init Python Function
 def python(file):
@@ -143,7 +139,7 @@ def evaluate(inp):
     if " " not in inp:
         return eval(inp)
     else:
-        return f"{Fore.RED}EvalSpaceError: {inp}. This Is An Error To Prevent Malicious Code From Executing.{Style.RESET_ALL}"
+        return f"EvalSpaceError: {inp}. This Is An Error To Prevent Malicious Code From Executing."
 
 # Init Edit Function
 def edit(file):
