@@ -48,7 +48,7 @@ def parse(fileContents):
                 elif "eval" in varValue:
                     math_str = varValue.split(" ")[1]
                     for i in vars:
-                        math_str.replace(i, vars[i])
+                        math_str = math_str.replace(i, vars[i])
                     varValue = eval(math_str)
                 else:
                     raise Exception(f"'{varValue}' Is Not Defined.")

@@ -2,8 +2,7 @@
 import os
 from math import *
 import lang
-import requests
-import bs4
+
 
 helpMenu = {
     "python": "python <FILE>",
@@ -25,13 +24,15 @@ def console():
     while True:
         try:
             cmd = input(f"{os.getcwd()} >>> ")
-            if "python " in cmd:
+            if "python" in cmd:
                 file = cmd.replace("python ", "")
                 if file.endswith(".py"):
                     python(file)
                 else:
                     print(f"FileTypeError: {file}")
-            elif "carbon " in cmd:
+            elif cmd == "shutdown":
+                os.system("shutdown")
+            elif "carbon" in cmd:
                 file = cmd.replace("carbon ", "")
                 if file.endswith(".car"):
                     lang.run(file)
@@ -40,36 +41,36 @@ def console():
                     print(f"FileTypeError: {file}")
             elif "help" in cmd:
                 help()
-            elif "color " in cmd:
+            elif "color" in cmd:
                 _color = cmd.replace("color ", "")
                 color(_color)
             elif "hello world" == cmd:
                 print("Hello World!")
-            elif "edit " in cmd:
+            elif "edit" in cmd:
                 file = cmd.replace("edit ", "")
                 edit(file)
-            elif "create_file " in cmd: 
+            elif "create_file" in cmd: 
                 file = cmd.replace("create_file ", "")
                 create(file)
-            elif "install " in cmd:
+            elif "install" in cmd:
                 package = cmd.replace("install ", "")
                 install(package)
-            elif "create_folder " in cmd:
+            elif "create_folder" in cmd:
                 folder = cmd.replace("create_folder ", "")
                 create_folder(folder)
-            elif "eval " in cmd:
+            elif "eval" in cmd:
                 inp = cmd.replace("eval ", "")
                 print(evaluate(inp))
-            elif "view_dir " in cmd:
+            elif "view_dir" in cmd:
                 folder = cmd.replace("view_dir ", "")
                 view_dir(folder)
-            elif "clone_repo " in cmd:
+            elif "clone_repo" in cmd:
                 repo = cmd.replace("clone_repo ", "")
                 clone_repo(repo)
-            elif "cd " in cmd:
+            elif "cd" in cmd:
                 dir = cmd.replace("cd ", "")
                 cd(dir)
-            elif "clone_file " in cmd:
+            elif "clone_file" in cmd:
                 file = cmd.replace("clone_file ", "")
                 new_file = input("What Is The Name Of This File? ")
                 clone_file(file, new_file)

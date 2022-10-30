@@ -1,4 +1,7 @@
+print "Enter A Number: ";
 var num1 = input;
+print "Enter Another Number: ";
 var num2 = input;
 var total = eval num1+num2;
 print total;
+print " is the total!";
